@@ -34,6 +34,15 @@ def communicate():
 
 # ユーザーインターフェイスの構築
 st.title("新世代のアイドル型ChatAI, ChatGPS爆誕")
+# ライブラリ追加
+from PIL import Image
+
+img = Image.open('TurtleChatUI.jpg')
+
+# use_column_width 実際のレイアウトの横幅に合わせるか
+st.image(img, caption='GPS亀くん', use_column_width=True)
+
+
 st.write("私は英語教師です。単語や文章を入力するとそれを日英翻訳します。また、会話の練習がしたい場合は「英会話練習」と言ってください。")
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
