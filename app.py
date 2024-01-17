@@ -33,10 +33,6 @@ def communicate():
 
 
 # ユーザーインターフェイスの構築
-primaryColor = "#0000FF"
-backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#F0F0F0"
-textColor = "#000000"
 
 st.title("新世代のアイドル型AI ChatGPS")
 # ライブラリ追加
