@@ -40,12 +40,12 @@ from PIL import Image
 img = Image.open('ChatGPSGAL.jpg')
 
 # use_column_width 実際のレイアウトの横幅に合わせるか
-st.image(img, caption='GPSギャル', use_column_width=True)
+st.image(img, use_column_width=True)
 
 
 st.write("私は英語教師のGPSギャル。単語や文章を入力するとそれを日英翻訳してあげる。また、会話の練習がしたい場合は「英会話練習」と言ってね。")
 
-user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
+user_input = st.text_input("メッセージを入力してね。", key="user_input", on_change=communicate)
 
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
