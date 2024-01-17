@@ -33,7 +33,6 @@ def communicate():
 
 
 # ユーザーインターフェイスの構築
-[theme]
 primaryColor = "#0000FF"
 backgroundColor = "#FFFFFF"
 secondaryBackgroundColor = "#F0F0F0"
