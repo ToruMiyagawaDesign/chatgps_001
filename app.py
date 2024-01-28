@@ -34,7 +34,7 @@ def communicate():
 
 # ユーザーインターフェイスの構築
 
-st.title("新世代のアイドル型AI ChatGPS",divider='rainbow')
+st.header("新世代のアイドル型AI ChatGPS", divider='rainbow')
 # ライブラリ追加
 from PIL import Image
 
