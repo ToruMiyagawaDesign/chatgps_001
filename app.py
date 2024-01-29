@@ -45,6 +45,8 @@ st.image(img, use_column_width=True)
 
 
 st.write("私は英語教師のGPSギャル。単語や文章を入力するとそれを日英翻訳してあげる。また、会話の練習がしたい場合は「英会話練習」と言ってね。")
+if st.button('クリックしてください'):
+    st.write('ボタンがクリックされました！')
 
 user_input = st.text_input("メッセージを入力してね。", key="user_input", on_change=communicate)
 
