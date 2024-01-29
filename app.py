@@ -43,21 +43,20 @@ img = Image.open('ChatGPSGAL.jpg')
 # use_column_width 実際のレイアウトの横幅に合わせるか
 st.image(img, use_column_width=True)
 
-
-st.write("私は英語教師のGPSギャル。単語や文章を入力するとそれを日英翻訳してあげる。また、会話の練習がしたい場合は「英会話練習」と言ってね。")
-
 # 3つの列を作成
 col1, col2, col3 = st.beta_columns(3)
 
 # ボタンを各列に配置
-if col1.button('雑談モード'):
+if col1.button('雑談モード', width=100):
     st.write('気軽に何でも話してね！')
 
-if col2.button('日英翻訳モード'):
+if col2.button('日英翻訳モード', width=100):
     st.write('なんでも翻訳するわよ！')
 
-if col3.button('英会話練習モード'):
+if col3.button('英会話練習モード', width=100):
     st.write('英語で会話するわよ！')
+
+st.write("私は英語教師のGPSギャル。単語や文章を入力するとそれを日英翻訳してあげる。また、会話の練習がしたい場合は「英会話練習」と言ってね。")
 
 user_input = st.text_input("メッセージを入力してね。", key="user_input", on_change=communicate)
 
