@@ -66,7 +66,6 @@ if st.session_state["messages"]:
         speaker = "🙂"
         if message["role"]=="assistant":
             speaker="👧"
-        with st.chat_message("user"):
         st.write(speaker + ": " + message["content"])
         
         
