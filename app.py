@@ -1,3 +1,4 @@
+
 import streamlit as st
 import openai
 
@@ -57,6 +58,7 @@ if col3.button('英会話練習モード'):
     st.write('英語で会話するわよ！')
 
 
+
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
 
@@ -64,6 +66,7 @@ if st.session_state["messages"]:
         speaker = "🙂"
         if message["role"]=="assistant":
             speaker="👧"
-        st.chat_message(message['content'], speaker=speaker)  # メッセージを表示
-
+        st.write(speaker + ": " + message["content"])
+        
+        
 user_input = st.text_input("メッセージを入力してね。", key="user_input", on_change=communicate)
