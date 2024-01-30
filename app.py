@@ -58,7 +58,6 @@ if col3.button('英会話練習モード'):
     st.write('英語で会話するわよ！')
 
 
-user_input = st.text_input("メッセージを入力してね。", key="user_input", on_change=communicate)
 
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
@@ -67,4 +66,8 @@ if st.session_state["messages"]:
         speaker = "🙂"
         if message["role"]=="assistant":
             speaker="👧"
+        with st.chat_message("user"):
         st.write(speaker + ": " + message["content"])
+        
+        
+user_input = st.text_input("メッセージを入力してね。", key="user_input", on_change=communicate)
