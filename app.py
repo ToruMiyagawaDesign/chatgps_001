@@ -58,17 +58,15 @@ if col3.button('英会話練習モード'):
     st.write('英語で会話するわよ！')
 
 
+
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
 
     for message in reversed(messages[1:]):  # 直近のメッセージを上に
         speaker = "🙂"
-        if message["role"] == "assistant":
-            speaker = "👧"
-        with st.beta_container():
-            st.chat_message(speaker)
-            st.write(speaker + ": " + message["content"])
-
+        if message["role"]=="assistant":
+            speaker="👧"
+        st.write(speaker + ": " + message["content"])
         
         
 user_input = st.text_input("メッセージを入力してね。", key="user_input", on_change=communicate)
