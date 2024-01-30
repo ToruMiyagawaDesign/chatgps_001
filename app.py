@@ -63,10 +63,12 @@ if st.session_state["messages"]:
 
     for message in reversed(messages[1:]):  # 直近のメッセージを上に
         speaker = "🙂"
-        if message["role"]=="assistant":
-            speaker="👧"
-        message = st.chat_message("speaker")
-        message.write(speaker + ": " + message["content"])
+        if message["role"] == "assistant":
+            speaker = "👧"
+        with st.beta_container():
+            st.chat_message(speaker)
+            st.write(speaker + ": " + message["content"])
+
         
         
 user_input = st.text_input("メッセージを入力してね。", key="user_input", on_change=communicate)
