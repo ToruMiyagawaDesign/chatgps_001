@@ -65,7 +65,7 @@ if st.session_state["messages"]:
         speaker = "🙂"
         if message["role"]=="assistant":
             speaker="👧"
-        st.write(speaker + ": " + message["content"])
+        message.write(speaker + ": " + message["content"])
         
         
 user_input = st.text_input("メッセージを入力してね。", key="user_input", on_change=communicate)
