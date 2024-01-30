@@ -1,3 +1,4 @@
+
 import streamlit as st
 import openai
 
@@ -10,7 +11,8 @@ system_prompt = """
 
 # st.session_stateを使いメッセージのやりとりを保存
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "system", "content": system_prompt}]
+    st.session_state["messages"] = [
+        {"role": "system", "content": system_prompt}]
 
 # チャットボットとやりとりする関数
 def communicate():
@@ -29,7 +31,9 @@ def communicate():
 
     st.session_state["user_input"] = ""  # 入力欄を消去
 
+
 # ユーザーインターフェイスの構築
+
 st.title("新世代のアイドル型AI ChatGPS")
 # ライブラリ追加
 from PIL import Image
@@ -53,20 +57,15 @@ if col2.button('日英翻訳モード'):
 if col3.button('英会話練習モード'):
     st.write('英語で会話するわよ！')
 
+
 if st.session_state["messages"]:
     messages = st.session_state["messages"]
 
     for message in reversed(messages[1:]):  # 直近のメッセージを上に
-        speaker = ""
-        if message["role"] == "assistant":
-            speaker = "assistant"
-        elif message["role"] == "user":
-            speaker = "user"
+        speaker = "🙂"
+        if message["role"]=="assistant":
+            speaker="👧"
+        st.write(speaker + ": " + message["content"])
         
-        with st.beta_container():
-            if speaker == "assistant":
-                st.write("AI:", message["content"])
-            elif speaker == "user":
-                st.write("あなた:", message["content"])
-
+        
 user_input = st.text_input("メッセージを入力してね。", key="user_input", on_change=communicate)
