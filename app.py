@@ -67,8 +67,8 @@ if st.session_state["messages"]:
         elif message["role"] == "user":
             speaker = "user"
         
-        with st.chat_message(speaker):
-            st.write(message["content"])
+        with st.chat_message("role"):
+            st.write(message["messages"])
 
         
         
